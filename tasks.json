@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build with Raylib",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+    "-g",
+    "${workspaceFolder}/src/*.cpp", // Biên dịch tất cả file cpp trong src
+    "-o",
+    "${workspaceFolder}/my_game.exe",
+    "-I", "${workspaceFolder}/lib",  // Đường dẫn đến header raylib nếu cần
+    "-L", "${workspaceFolder}/lib",  // Đường dẫn đến file .a raylib nếu cần
+    "-lraylib",
+    "-lopengl32",
+    "-lgdi32",
+    "-lwinmm"
+],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Biên dịch dự án Raylib trên Windows (MSYS2)"
+        }
+    ]
+}
